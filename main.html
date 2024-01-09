@@ -11,27 +11,28 @@
     <button id="incrementBtn">Increment</button>
 
     <script>
-        // Get the counter and button elements
-        const counterElement = document.getElementById('counter');
-        const incrementBtn = document.getElementById('incrementBtn');
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the counter element
+            var counterElement = document.getElementById("counter");
 
-        // Initialize the counter value
-        let counterValue = 0;
+            // Get the increment button element
+            var incrementButton = document.getElementById("incrementBtn");
 
-        // Function to handle button click
-        function handleIncrement() {
-            // Show the current counter value in an alert
-            alert(`${counterValue}`);
+            // Initialize the counter value
+            var counterValue = 0;
 
-            // Increment the counter value
-            counterValue++;
+            // Add click event listener to the increment button
+            incrementButton.addEventListener("click", function() {
+                // Display the un-incremented value in an alert
+                alert("Un-incremented Value: " + counterValue);
 
-            // Update the counter display
-            counterElement.textContent = counterValue;
-        }
+                // Increment the counter value
+                counterValue++;
 
-        // Attach the handleIncrement function to the button click event
-        incrementBtn.addEventListener('click', handleIncrement);
+                // Update the counter element text
+                counterElement.textContent = counterValue;
+            });
+        });
     </script>
 
 </body>
